@@ -88,3 +88,85 @@ INSERT INTO animals (animals_id, name, date_of_birth, escape_attempts, neutered,
  	true,
  	20.4
 );
+
+-- OWNERS INFO
+
+INSERT INTO owners(owners_id, full_name, age) VALUES(
+ 	1, 
+ 	'Sam Smith', 
+ 	34
+);
+
+INSERT INTO owners(owners_id, full_name, age) VALUES(
+ 	2, 
+ 	'Jennifer Orwell', 
+ 	19
+);
+
+INSERT INTO owners(owners_id, full_name, age) VALUES(
+ 	3, 
+ 	'Bob', 
+ 	45
+);
+
+INSERT INTO owners(owners_id, full_name, age) VALUES(
+ 	4, 
+ 	'Melody Pond', 
+ 	77
+);
+
+INSERT INTO owners(owners_id, full_name, age) VALUES(
+ 	5, 
+ 	'Dean Winchester', 
+ 	14
+);
+
+INSERT INTO owners(owners_id, full_name, age) VALUES(
+ 	6, 
+ 	'Jodie Whittaker', 
+ 	38
+);
+
+-- SPECIES INFO
+
+INSERT INTO species(species_id, name) VALUES(
+ 	1,
+ 	'Pokemon'
+);
+
+INSERT INTO species(species_id, name) VALUES(
+ 	2,
+ 	'Digimon'
+);
+
+-- Modify inserted animals
+
+UPDATE animals
+SET species_id = (SELECT species_id WHERE name='Digimon')
+WHERE name LIKE '%mon';
+
+UPDATE animals
+SET species_id = (SELECT species_id WHERE name='Pokemon')
+WHERE species_id IS NULL;
+
+UPDATE animals
+SET owners_id = (SELECT owners_id WHERE name= 'Sam Smith')
+WHERE name = 'Agumon';
+
+UPDATE animals
+SET owners_id = (SELECT owners_id WHERE name= 'Jennifer Orwell')
+WHERE name = 'Gabumon' OR name= ' Pikachu';
+
+UPDATE animals
+SET owners_id = (SELECT owners_id WHERE name= 'Bob')
+WHERE name = 'Devimon' OR name = 'Plantmon';
+
+UPDATE animals
+SET owners_id = (SELECT owners_id WHERE name= 'Melody Pond')
+WHERE name = 'Charmander' OR name = 'Squirtle' OR name = 'Blossom';
+
+UPDATE animals
+SET owners_id = (SELECT owners_id WHERE name= 'Dean Winchester')
+WHERE name = 'Angemon' OR name = 'Boarmon';
+
+

@@ -8,3 +8,5 @@ CREATE TABLE animals(
    weight_kg decimal,
    PRIMARY KEY( animals_id )
 );
+
+ALTER TABLE animals ADD species;

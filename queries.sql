@@ -123,6 +123,8 @@ FROM visits
 LEFT JOIN animals ON animals.animals_id = visits.animal_id
 LEFT JOIN vets ON vets.vets_id = visits.vets_id
 WHERE vets.name = 'William Tatcher';
+ORDER BY visits.visit_date DESC
+LIMIT 1;
 
 SELECT animals.name
 FROM visits
@@ -152,11 +154,15 @@ FROM visits
 LEFT JOIN animals ON animals.animals_id = visits.animal_id
 LEFT JOIN vets ON vets.vets_id = visits.vets_id
 WHERE vets.name = 'Maisy Smith';
+ORDER BY visits.visit_date ASC
+LIMIT 1;
 
 SELECT animals.*, vets.*, visits.visit_date
 FROM visits
 LEFT JOIN animals ON animals.animals_id = visits.animal_id
 LEFT JOIN vets ON vets.vets_id = visits.vets_id;
+ORDER BY visits.visit_date DESC
+LIMIT 1;
 
 SELECT count(*)
 FROM visits

@@ -10,3 +10,23 @@ CREATE TABLE animals(
 );
 
 ALTER TABLE animals ADD species;
+
+CREATE TABLE owners(
+   owners_id SERIAL,
+   full_name VARCHAR(30),
+   age integer,
+   PRIMARY KEY(owners_id)
+);
+
+CREATE TABLE species(
+   species_id SERIAL,
+   name VARCHAR(30),
+   PRIMARY KEY(species_id)
+);
+
+ALTER TABLE animals DROP COLUMN animals_id;
+ALTER TABLE animals ADD COLUMN animals_id SERIAL PRIMARY KEY;
+ALTER TABLE animals DROP COLUMN species;
+
+ALTER TABLE animals ADD species_id int REFERENCES species(species_id);
+ALTER TABLE animals ADD owners_id int REFERENCES owners(owners_id);

@@ -7,6 +7,9 @@ Vet Clinic Database is a data structure for a vet clinic and is created using Po
 - clinic employees
 - visits
 
+# Schema Diagram
+-   <img src="./vet_clinic_schema_diagram.png" alt="Clinic diagram" width="1000px" />
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
